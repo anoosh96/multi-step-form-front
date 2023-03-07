@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./index.css">
+  <title>Frontend Mentor | Multi-step form</title>
+</head>
+<body>
+  <div class="multi-step-form-container">
+    <div class="multi-step-form">
+      <div class="side-nav">
+        <!-- Sidebar start -->
+
+          <div class="sidenav-item">
+            <div class="step-number">
+              <span class="step">1</span>
+            </div>
+            <div class="step-info">
+              <span class="font-regular">Step 1</span>
+              <span class="font-bold">YOUR INFO</span>
+            </div>
+          </div>
+          <div class="sidenav-item">
+            <div class="step-number">
+              <span class="step">2</span>
+            </div>
+            <div class="step-info">
+              <span class="font-regular">Step 2</span>
+              <span class="font-bold">SELECT PLANS</span>
+            </div>
+          </div>
+          <div class="sidenav-item">
+            <div class="step-number">
+              <span class="step">3</span>
+            </div>
+            <div class="step-info">
+              <span class="font-regular">Step 3</span>
+              <span class="font-bold">ADDONS</span>
+            </div>
+          </div>
+          <div class="sidenav-item">
+            <div class="step-number">
+              <span class="step">4</span>
+            </div>
+            <div class="step-info">
+              <span class="font-regular">Step 4</span>
+              <span class="font-bold">CONFIRMATION</span>
+            </div>
+          </div>
+          <!-- Sidebar end -->
+      </div>
+      <div class="form-steps">
+        <div class="form-step" id="step1">
+            <!-- Step 1 start -->
+            <div class="form-header">
+              <h1 class="font-bold">Personal Info</h1>
+              <p class="font-regular">
+                Please provide your name, email address, and phone number.
+              </p>
+            </div>
+            <div class="form-content">
+              <form id="form-step-1">
+                <div class="form-group">
+                  <div class="form-label required">
+                    Name
+                  </div>
+                  <div class="form-input">
+                    <input type="text" name="name" required/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-label required">
+                    Email
+                  </div>
+                  <div class="form-input">
+                    <input type="email" name="email" required/>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="form-label required">
+                    Phone Number
+                  </div>
+                  <div class="form-input">
+                    <input type="text" name="phone" required/>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- Step 1 end -->
+        </div>
+        <div class="form-step" id="step2">
+           <!-- Step 2 start -->
+           <div class="form-header">
+            <h1 class="font-bold">Select Your Plans</h1>
+            <p class="font-regular">
+              You have the option of monthly or yearly billing
+            </p>
+          </div>
+          <div class="form-content">
+             <form id="form-step-2">
+                <div class="form-group">
+                   <div class="plan-options">
+                     <label class="plan" for="plan_1">
+                       <input type="radio" value="01" name="plan_name" id="plan_1" checked/>
+                       <div class="checkmark">
+                         <div class="plan-img">
+                           <img src="./assets/images/icon-arcade.svg" alt="">
+                         </div>
+                         <h2 class="plan-name font-bold">
+                           Arcade
+                         </h2>
+                         <p class="font-regular perm price">
+                           $9/mo
+                         </p>
+                         <p class="font-regular pery price">
+                          $90/yr
+                         </p>
+                         <p class="font-regular extra pery">
+                          2 months free
+                         </p>
+                       </div>
+                      </label>
+                     <label class="plan font-bold" for="plan_2">
+                      <input type="radio" name="plan_name" value="02" id="plan_2"/>
+                      <div class="checkmark">
+                        <div class="plan-img">
+                          <img src="./assets/images/icon-advanced.svg" alt="">
+                        </div>
+                        <h2 class="plan-name font-bold">
+                          Advanced
+                        </h2>
+                        <p class="font-regular perm price">
+                          $12/mo
+                        </p>
+                        <p class="font-regular pery price">
+                         $120/yr
+                        </p>
+                        <p class="font-regular extra pery">
+                         2 months free
+                        </p>
+                      </div> 
+                    </label>
+                     <label class="plan" for="plan_3">
+                      <input type="radio" name="plan_name" value="03" id="plan_3"/>
+                      <div class="checkmark">
+                        <div class="plan-img">
+                          <img src="./assets/images/icon-pro.svg" alt="">
+                        </div>
+                        <h2 class="plan-name font-bold">
+                          Pro
+                        </h2>
+                        <p class="font-regular perm price">
+                          $15/mo
+                        </p>
+                        <p class="font-regular pery price">
+                         $150/yr
+                        </p>
+                        <p class="font-regular extra pery">
+                         2 months free
+                        </p>
+                      </div> 
+                    </label>
+                   </div>
+                </div>
+                <div class="form-group plan-duration mt-3">
+                  <label>Monthly</label>
+                  <label class="switch">
+                    <input type="checkbox" name="plan_duration" id="duration">
+                    <span class="slider round"></span>
+                  </label>
+                  <label>Yearly</label>
+                </div>
+             </form>
+          </div>
+            <!-- Step 2 end -->
+        </div>
+        <div class="form-step" id="step3">
+          <!-- Step 3 start -->
+
+          <div class="form-header">
+            <h1 class="font-bold">Pick add-ons</h1>
+            <p class="font-regular">
+              Add ons help enhance your gaming experience
+            </p>
+          </div>
+          <div class="form-content">
+            <form id="form-step-3">
+            <div class="add-ons">
+              <label class="add-on flex" for="online">
+                <div class="add-on-check">
+                  <input type="checkbox" name="add_on_online" id="online"/>
+                  <div class="form-label add-on-label">
+                    <h3>Online Service</h3>
+                    <p class="font-regular">Access to Multiplayer Games</p>
+                  </div>
+                </div>
+                <p>+$1/mo</p>
+              </label>
+              <label class="add-on flex" for="custom">
+                <div class="add-on-check">
+                  <input type="checkbox" name="add_on_customizable" id="custom"/>
+                  <div class="form-label add-on-label">
+                    <h3>Customizable Profile</h3>
+                    <p class="font-regular">Custom theme on your profile</p>
+                  </div>
+                </div>
+                <p>+$1/mo</p>
+              </label>
+              <label class="add-on flex" for="storage">
+                <div class="add-on-check">
+                  <input type="checkbox" name="add_on_storage" id="storage"/>
+                  <div class="form-label add-on-label">
+                    <h3>Larger Storage</h3>
+                    <p class="font-regular">Extra 1TB of Cloud Save</p>
+                  </div>
+                </div>
+                <p>+$1/mo</p>
+              </label>
+            </div>
+          </form>
+          </div>
+          <!-- Step 3 end -->
+        </div>
+        <div class="form-step" id="step4">
+          <!-- Step 4 start -->
+          <div class="form-header">
+            <h1 class="font-bold">Finishing up</h1>
+            <p class="font-regular">
+              Double-check everything looks OK before confirming.
+            </p>
+          </div>
+
+          <div class="subscription-items" id="sub-items">
+          </div>
+          <!-- Step 4 end -->
+        </div>
+        <div class="form-step" id="step5">
+            <!-- Step 5 start -->
+            Thank you!
+
+            Thanks for confirming your subscription! We hope you have fun 
+            using our platform. If you ever need support, please feel free 
+            to email us at support@loremgaming.com.
+
+            <!-- Step 5 end -->
+        </div>
+        <div class="nav-btns">
+          <button id="back-btn" class="btn bg-dark">Back</button>
+          <button id="next-btn" class="btn bg-dark">Next</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./index.js"></script>
+</body>
+</html>

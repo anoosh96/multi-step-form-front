@@ -1,0 +1,367 @@
+@font-face {
+  font-family: ubuntu-bold;
+  src: url('./assets/fonts/Ubuntu-Bold.ttf');
+}
+
+@font-face {
+  font-family: ubuntu-regular;
+  src: url('./assets/fonts/Ubuntu-Regular.ttf');
+}
+
+@font-face {
+  font-family: ubuntu-medium;
+  src: url('./assets/fonts/Ubuntu-Medium.ttf');
+}
+
+:root {
+  --bg-color: #ececeb;
+  --form-color: white;
+  --btn-dark-color: violet;
+  --btn-dark-text: white;
+  --bg-active: rgba(93, 189, 253, 0.952);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  display: block;
+}
+
+.flex {
+  display: flex
+}
+
+.btn {
+  padding: 15px 25px;
+  border-radius: 10px;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: ubuntu-regular;
+}
+
+.bg-dark {
+  background-color: var(--btn-dark-color);
+  color: var(--btn-dark-text);
+}
+
+.bg-transparent {
+  background-color: transparent;
+}
+
+.bg-blue {
+  background-color: var(--bg-active);
+}
+
+.font-regular{
+  font-family: ubuntu-regular;
+}
+
+.font-bold{
+  font-family: ubuntu-bold;
+}
+
+.font-medium {
+  font-family: ubuntu-medium;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.required::after {
+  content: '*'
+}
+
+body {
+  background-color: var(--bg-color);
+}
+
+.multi-step-form-container {
+  width: 900px;
+  height: 600px;
+  background-color: var(--form-color);
+  padding: 20px;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-50%, -50%);
+}
+
+.multi-step-form {
+  display: flex;
+  height: 100%;
+}
+
+.multi-step-form .side-nav {
+  width: 300px;
+  flex-shrink: 0;
+  height: 100%;
+  background-image: url('./assets/images/bg-sidebar-desktop.svg');
+  object-fit: cover;
+  background-repeat: no-repeat;
+  padding: 40px;
+}
+
+.side-nav .sidenav-item{
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.sidenav-item .step-number{
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.step-number .step{
+  display: block;
+}
+
+.sidenav-item .step-info span{
+  display: block;
+  margin-left: 20px;
+}
+
+.multi-step-form .form-steps {
+  padding: 0 40px;
+  height: 100%;
+  width: 570px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.form-label {
+  font-family: ubuntu-regular;
+  margin-bottom: 10px;
+}
+
+.form-input input{
+  border-radius: 10px;
+  border: 1px solid gray;
+  padding: 20px 10px;
+  width: 100%;
+  font-family: ubuntu-regular;
+}
+
+.form-steps .nav-btns{
+  /* margin-top: 1rem; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-steps .form-header {
+  margin: 30px 0;
+}
+
+.form-steps .form-content {
+  margin-top: 3rem;
+}
+
+.plan-options {
+  display: flex;
+  justify-content: space-between;
+}
+
+.plan-options .plan{
+  width: 140px;
+  height: 160px;
+  margin-left: 10px;
+  position: relative;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 10px;
+}
+
+.plan input[type="radio"]{
+  /* appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  margin: 0 */
+  visibility: hidden;
+}
+
+.plan .checkmark {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  padding: 15px 10px;
+}
+
+.checkmark .plan-name{
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.checkmark .price {
+  margin: 10px 0;
+  font-size: 0.9rem;
+  color: gray;
+}
+
+.checkmark .extra {
+  font-size: 0.8rem;
+  color: rgba(134, 64, 134, 0.938)
+}
+
+.plan input:checked ~ .checkmark {
+  border: 1px solid purple;
+  border-radius: 10px;
+}
+
+.plan-duration {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  padding: 20px 0;
+}
+
+.plan-duration label {
+  margin-right: 1rem;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.add-on {
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgb(136, 72, 136);
+  padding: 5px 20px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.add-on-check {
+  display: flex;
+  align-items: center;
+}
+
+.add-on-label {
+  text-align: left;
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.add-on-label * {
+  margin: 10px;
+}
+
+.add-on-label p {
+  color: gray;
+}
+
+.sub-items {}
+
+.sub-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bg-color);
+  padding: 5px 10px;
+  font-size: 0.9rem;
+}
+
+.sub-item .change-btn {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.8rem;
+  text-decoration: underline;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .multi-step-form-container{
+    width: 750px;
+  }
+}
+
+@media screen and (max-width: 767px){
+  .multi-step-form-container{
+    width: 600px;
+  }
+}
